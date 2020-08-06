@@ -74,6 +74,10 @@ class TextsSearch extends Texts
      */
     public function generator($count = 2)
     {
+        if(!$count) {
+            return '';
+        }
+        
         $this->count_sentence = $count;
 
         $search = Texts::find()
