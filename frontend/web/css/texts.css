@@ -1,0 +1,23 @@
+.texts {
+	text-overflow: ellipsis; 
+	white-space: nowrap; 
+	overflow: hidden;
+	max-width: 800px;
+}
+
+.result-generation {
+	margin-top: 2em;
+    padding: 1em;
+	color: #555555;
+	border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.result-generation span {
+	color: #ccc;
+	text-align: center;
+	display: block;
+	margin-bottom: 1em;
+	font-size: 18px;
+}

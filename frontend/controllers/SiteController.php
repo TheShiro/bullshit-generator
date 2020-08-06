@@ -6,6 +6,7 @@ use yii\base\InvalidArgumentException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use frontend\models\TextsSearch;
 
 /**
  * Site controller
@@ -34,6 +35,19 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new TextsSearch();
+
+        if(Yii::$app->request->post()) {
+            $result = $model->generator(Yii::$app->request->post()['TextsSearch']['count_sentence']);
+
+            return $this->render('index', [
+                'model' => $model,
+                'result' => $result
+            ]);
+        }
+
+        return $this->render('index', [
+            'model' => $model,
+        ]);
     }
 }
